@@ -35,6 +35,7 @@ client.addEventListener("open", function() {
       button.click();
     }
   });
+
   userName.addEventListener("keypress", function(){
     if(event.keyCode === 13){
       button.click();

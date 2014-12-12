@@ -41,14 +41,6 @@ server.on("connection", function(connection){
   connection.on("close", function(){
     console.log(connection.userId + " Disconnected");
 
-    // var userNumber = storedClients.length
-    //
-    // for (var i = 0; i < storedClients.length; i++) {
-    //     if(connection === storedClients[i]){
-    //       storedClients.splice(i, 1);
-    //     }
-    // }
-
     storedClients.forEach(function(each){
       if (each === connection) {
         var index = storedClients.indexOf(each);
