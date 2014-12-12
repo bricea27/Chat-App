@@ -15,6 +15,7 @@ server.on("connection", function(connection){
   console.log("Client Connected");
 
   connection.userId = "user_" + clientCounter;
+
   console.log(connection.userId);
 
   //add new connection to list of clients

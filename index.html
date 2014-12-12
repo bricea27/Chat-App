@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Serialization</title>
+  <title>Chat App</title>
   <link rel="stylesheet" href="style.css">
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to <span>Brice Chat</span></h1>
+    <h1>< dev<span>chat</span> ></h1>
   </header>
 
-  <section id="display">
-    <div class="absolute-center" id="userinput">
+  <section id="userinput">
+    <div class="wrapper">
       <h2> Please Enter a Username Below </h2>
       <h3> Then Type and Send Your First Message to Begin!</h3>
-      <input type = "text" id="username" placeholder="Enter Username:" class="text absolute-center">
+      <input type = "text" id="username" class="text" placeholder="Username:">
     </div>
+  </section>
+
+  <section id="display">
     <ul>
     </ul>
   </section>
 
   <section class="input">
-    <input type="text" id="input" placeholder="Type:" class="text">
+    <input type="text" id="input" placeholder="Message:" class="text">
     <button id ="button" class="send"> Send </button>
   </section>
 
