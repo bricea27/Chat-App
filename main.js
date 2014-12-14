@@ -1,5 +1,5 @@
 //Client File
-var client = new WebSocket("ws://localhost:3000");
+var client = new WebSocket("ws://andrew.princesspeach.nyc:3000");
 
 client.addEventListener("open", function() {
   console.log('connected');
