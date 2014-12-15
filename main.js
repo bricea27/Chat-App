@@ -29,8 +29,8 @@ client.addEventListener("open", function() {
       input.value = "";
       client.send(JSON.stringify(messageObject));
 
-      var codify = document.getElementById("codify");
-      codify.style.display = "inline-block";
+      var sly = document.getElementById("sly");
+      sly.style.display = "inline-block";
       var logout = document.getElementById("logout");
       logout.style.display = "inline-block";
       names.push(messageObject.name);
@@ -80,8 +80,15 @@ client.addEventListener("open", function() {
   });//end message listener
 
 
-  var codify = document.getElementById("codify");
-  codify.addEventListener("click", function(){
+
+
+
+
+
+
+  //Sly Mode Functionality
+  var sly = document.getElementById("sly");
+  sly.addEventListener("click", function(){
 
     var messages = document.getElementsByTagName("p");
     var messageList = [];
@@ -92,18 +99,53 @@ client.addEventListener("open", function() {
     };
 
     messageList.forEach(function(each){
-      var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-      var newString = '';
       var content = each.innerHTML;
+      var coded = '';
 
       for (i = 0; i < content.length; i++) {
-        var rnum = Math.floor(Math.random() * chars.length);
-        newString = newString + chars.substring(rnum, rnum + 1);
+
+        var key = content.charCodeAt(i);
+        var newKey = key + 1;
+        var newLetter = String.fromCharCode(newKey);
+        coded += newLetter;
       }
-      each.innerHTML = newString;
+      each.innerHTML = coded;
     });
 
-  });//end codify click
+    sly.style.display = "none";
+    unsly.style.display = "inline-block";
+
+  });//end sly click
+
+  var unsly = document.getElementById("unsly");
+  unsly.addEventListener("click", function(){
+
+    var messages = document.getElementsByTagName("p");
+    var messageList = [];
+
+    for (i = 0; i < messages.length; i++) {
+      var elem = messages[i];
+      messageList.push(elem);
+    };
+
+    messageList.forEach(function(each){
+      var content = each.innerHTML;
+      var coded = '';
+
+      for (i = 0; i < content.length; i++) {
+
+        var key = content.charCodeAt(i);
+        var newKey = key - 1;
+        var newLetter = String.fromCharCode(newKey);
+        coded += newLetter;
+      }
+      each.innerHTML = coded;
+    });
+
+    unsly.style.display = "none";
+    sly.style.display = "inline-block";
+
+  });//end unsly
 
 
   var logout = document.getElementById("logout");

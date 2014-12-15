@@ -93,7 +93,7 @@ h1 span {
   height: 40px;
   position: absolute;
   top: 30px;
-  left: 40px;
+  left: 20px;
   cursor: pointer;
   background: #000;
   font-weight: 700;
@@ -102,28 +102,63 @@ h1 span {
   border: 2px solid #1abc9c;
   font-size: 1em;
   border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-#codify {
+#sly {
   width: 100px;
   display: none;
   height: 40px;
   position: absolute;
   top: 30px;
-  right: 40px;
+  right: 20px;
   cursor: pointer;
   background: #000;
   font-weight: 700;
   text-transform: uppercase;
   color: #333;
   border: 2px solid #333;
-  font-size: 0.75em;
+  font-size: 1em;
   border-radius: 5px;
+  z-index: 10;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
-#logout:hover, #logout:active, #codify:hover, #codify:active {
+#unsly {
+  width: 100px;
+  display: none;
+  height: 40px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  cursor: pointer;
+  background: #000;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+  border: 2px solid #333;
+  font-size: 1em;
+  border-radius: 5px;
+  z-index: 9999;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#logout:hover, #logout:active, #sly:hover, #sly:active, #unsly:hover, #unsly:active {
   background: #1abc9c;
   color: #000;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 h2 {
@@ -174,7 +209,7 @@ h2 {
   overflow-x: hidden;
   word-wrap: break-word;
   line-height: 1.5em;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 #display li {
@@ -201,12 +236,11 @@ h2 {
   width: 100%;
   height: 80px;
   border: none;
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  z-index: 9999;
+  z-index: 99999;
   padding: 10px;
   background: #222;
-  z-index: 99999;
 }
 
 .text {
@@ -247,13 +281,17 @@ h2 {
   height: 60px;
   float: right;
   cursor: pointer;
-  background: #1abc9c;
+  background: #222;
   font-weight: 700;
   text-transform: uppercase;
-  color: #222;
-  border: none;
+  color: #1abc9c;
+  border: 2px solid #1abc9c;
   font-size: 1.5em;
   border-radius: 10px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 input:focus, button:focus {
@@ -261,11 +299,16 @@ input:focus, button:focus {
 }
 
 .send:hover {
-  opacity: 0.7;
+  background: #1abc9c;
+  color: #000;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .send:active {
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 
@@ -284,18 +327,17 @@ input:focus, button:focus {
 
   h1 {
     font-size: 2.5em;
+    margin-top: 5px;
   }
 
   #logout {
     width: 60px;
-    left: 20px;
     font-size: 0.6em;
   }
 
-  #codify {
-    right: 20px;
+  #sly, #unsly {
     width: 60px;
-    font-size: 0.6em;
+    font-size: 0.75em;
   }
 
 }

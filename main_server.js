@@ -32,10 +32,12 @@ server.on("connection", function(connection){
     console.log(message);
     //add message to stored messages array
     storedMessages.push(message);
+
     //send message to each client
     storedClients.forEach(function(each){
       each.send(message);
     });
+
 
   });//end message
 
