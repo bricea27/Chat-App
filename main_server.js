@@ -14,6 +14,7 @@ server.on("connection", function(connection){
   console.log(clientCounter);
   console.log("Client Connected");
 
+
   connection.userId = "user_" + clientCounter;
 
   console.log(connection.userId);
@@ -35,6 +36,7 @@ server.on("connection", function(connection){
     storedClients.forEach(function(each){
       each.send(message);
     });
+
   });//end message
 
   //if client closes connection, reset counter to 0
@@ -50,10 +52,5 @@ server.on("connection", function(connection){
 
   });//end on close
 
-  process.stdin.on("data", function(data){
-    var newData = data.toString().trim();
-    connection.send(newData);
-    storedMessages.push(newData);
-  });
 
 });//end connection
